@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+require "#{::File.dirname(__FILE__)}/../lib/car_navigator"
+
+car1 = [], car2 = []
+
+print "Enter upper-right coordinates of the playground: "
+upper_coordinates = gets.chomp
+
+print "Enter 1st car position: "
+car1[0] = gets.chomp
+
+print "Enter 1st car heading: "
+car1[1]  = gets.chomp
+
+print "Enter 2nd car position: "
+car2[0] = gets.chomp
+
+print "Enter 2nd car heading: "
+car2[1] = gets.chomp
+
+navigator = CarNavigator::Controller.new(upper_coordinates, car1, car2)
+puts navigator.run
